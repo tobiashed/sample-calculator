@@ -343,5 +343,115 @@ public class CalculatorTest {
 			
 		}
 	}
+	@Test
+	public void testDivideSmallSizedPositiveNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*10));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*10));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testDivideMediumSizedPositiveNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*100));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*100));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testDivideLargeSizedPositiveNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testDivideZeros() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testDivideSmallSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*-10));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*-10));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testDivideMediumSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*-100));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*-100));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testDivideLargeSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*-1000));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*-1000));
+			result = firstNumber / secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
 
 }

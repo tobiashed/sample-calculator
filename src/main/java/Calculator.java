@@ -54,7 +54,7 @@ public class Calculator {
 	 * */
 	public double divide(double firstNumber, double secondNumber){
 		double result = firstNumber/secondNumber;
-		if (Double.isInfinite(result)) {
+		if (secondNumber == 0) {
 			System.out.println("Division by zero?");
 			return -0.123456789;
 		}
