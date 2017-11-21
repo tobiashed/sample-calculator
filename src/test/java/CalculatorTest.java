@@ -10,7 +10,7 @@ public class CalculatorTest {
 	private static final Logger LOG = Logger.getLogger(Calculator.class.getName());
 	Calculator calculator = new Calculator();
 	Random random = new Random();
-	DecimalFormat df = new DecimalFormat();
+	DecimalFormat df = new DecimalFormat("#.##");
 	
 	
 	@Test
@@ -25,7 +25,39 @@ public class CalculatorTest {
 			result = firstNumber + secondNumber;
 			
 			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
-			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result),1);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testAddMediumSizedPositiveNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*100));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*100));
+			result = firstNumber + secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+	}
+	@Test
+	public void testAddLargeSizedPositiveNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+		
+		for(int i = 0;i<200;i++) {
+			firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+			secondNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+			result = firstNumber + secondNumber;
+			
+			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result));
 			
 		}
 	}
