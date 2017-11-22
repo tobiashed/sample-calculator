@@ -74,6 +74,7 @@ public class CalculatorTest {
 			assertEquals(Math.round(calculator.add(firstNumber, secondNumber)), Math.round(result));
 			
 		}
+		
 	}
 	@Test
 	public void testAddSmallSizedNegativeNumbers() {
@@ -184,6 +185,7 @@ public class CalculatorTest {
 			assertEquals(Math.round(calculator.subtract(firstNumber, secondNumber)), Math.round(result));
 			
 		}
+		
 	}
 	@Test
 	public void testSubtractSmallSizedNegativeNumbers() {
@@ -427,7 +429,7 @@ public class CalculatorTest {
 		double secondNumber = 0;
 		double result = 0;
 		
-		for(int i = 0;i<200;i++) {
+		for (int i = 0;i<200;i++) {
 			firstNumber = Double.valueOf(df.format(random.nextDouble()*-100));
 			secondNumber = Double.valueOf(df.format(random.nextDouble()*-100));
 			result = firstNumber / secondNumber;
