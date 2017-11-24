@@ -397,15 +397,25 @@ public class CalculatorTest {
 	public void testDivideZeros() {
 		double firstNumber = 0;
 		double secondNumber = 0;
-		double result = 0;
+		double result = -0.123456789;
+		
+		LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+		assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
 		
 		for(int i = 0;i<200;i++) {
-			result = firstNumber / secondNumber;
-			
-			LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
-			assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
-			
+		firstNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+		secondNumber = 0;
+		result = -0.123456789;
+		LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+		assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
+		
+		firstNumber = 0;
+		secondNumber = Double.valueOf(df.format(random.nextDouble()*1000));
+		result = firstNumber / secondNumber;
+		LOG.info("Testing the method with: "+ firstNumber +" and " + secondNumber);
+		assertEquals(Math.round(calculator.divide(firstNumber, secondNumber)), Math.round(result));
 		}
+		
 	}
 	@Test
 	public void testDivideSmallSizedNegativeNumbers() {
